@@ -1,0 +1,77 @@
+Grupo A
+MEXICO SUDAFRICA COREA CHEQUIA
+
+Grupo B
+CANADA BOSNIA QATAR SUIZA
+
+Grupo C
+BRASIL MARRUECOS HAITI ESCOCIA
+
+Grupo D
+USA PARAGUAY AUSTRALIA TURQUIA
+
+Grupo E
+ALEMANIA CURAZAO CMARFIL ECUADOR
+
+Grupo F
+PBAJOS JAPON SUECIA TUNEZ
+
+Grupo G
+BELGICA EGIPTO IRAN NZELANDA
+
+Grupo H
+ESPAÑA CVERDE ARABIA URUGUAY
+
+Grupo I
+FRANCIA SENEGAL IRAK NORUEGA
+
+Grupo J
+ARGENTINA ARGELIA AUSTRIA JORDANIA
+
+Grupo k
+PORTUGAL CONGO UZBEKISTAN COLOMBIA
+
+Grupo L
+INGLATERRA CROACIA GHANA PANAMA
+
+Cruces de 16avos
+
+1. 2° A 🆚 2° B
+2. 1° E 🆚 mejor 3° (A/B/C/D/F)
+3 .1° F 🆚 2° C
+4. 1° C 🆚 2° F
+5. 1° I 🆚 mejor 3° (C/D/F/G/H)
+6. 2° E 🆚 2° I
+7. 1° A 🆚 mejor 3° (C/E/F/H/I)
+8. 1° L 🆚 mejor 3° (E/H/I/J/K)
+9. 1° D 🆚 mejor 3° (B/E/F/I/J)
+10. 1° G 🆚 mejor 3° (A/E/H/I/J)
+11. 2° K 🆚 2° L
+12 .1° H 🆚 2° J
+13. 1° J 🆚 2° H
+14. 2° D 🆚 2° G
+15. 1° B 🆚 mejor 3° (A/C/D/G/H)
+16. 1° K 🆚 mejor 3° (D/E/F/H/I)
+
+Cruces de OCTAVOS
+Ganador (1) 🆚 Ganador (2)
+Ganador (3) 🆚 Ganador (4)
+Ganador (5) 🆚 Ganador (6)
+Ganador (7) 🆚 Ganador (8)
+Ganador (9) 🆚 Ganador (10)
+Ganador (11) 🆚 Ganador (12)
+Ganador (13) 🆚 Ganador (14)
+Ganador (15) 🆚 Ganador (16)
+
+Cruces de CUARTOS
+Ganador Octavos 1 🆚 Ganador Octavos 2
+Ganador Octavos 3 🆚 Ganador Octavos 4
+Ganador Octavos 5 🆚 Ganador Octavos 6
+Ganador Octavos 7 🆚 Ganador Octavos 8
+
+Cruces de SEMIFINALES
+Ganador Cuartos 1 🆚 Ganador Cuartos 2
+Ganador Cuartos 3 🆚 Ganador Cuartos 4
+
+Cruce de final 
+Ganador de Semi 1 vs Ganador de Semi 2
