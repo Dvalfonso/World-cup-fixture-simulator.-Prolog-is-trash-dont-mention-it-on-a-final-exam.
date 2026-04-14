@@ -78,10 +78,31 @@ cuarto([_,_,_,X], X).
 elegir(A, B, X) :- random_member(X, [A,B]).
 
 % random_permutation mezcla las listas para simular que se jugaron partidos
-dieciseisavos1(Ganador) :- lista_de(grupoA, ListaA), 
-                            lista_de(grupoB, ListaB), 
-                            random_permutation(ListaA, GrupoADefinido),
-                            random_permutation(ListaB, GrupoBDefinido),
-                            segundo(GrupoADefinido, SegundoA),
-                            segundo(GrupoBDefinido, SegundoB),
-                            elegir(SegundoA, SegundoB, Ganador).
+%  2A vs 2B
+%
+
+sim(Grupo, GrupoDefinido) :- lista_de(Grupo, ListaGrupo), random_permutation(ListaGrupo, GrupoDefinido).
+
+
+simular_grupos(GrupoADefinido, GrupoBDefinido, GrupoCDefinido, GrupoDDefinido, GrupoEDefinido, GrupoFDefinido, GrupoGDefinido, GrupoHDefinido, GrupoIDefinido, GrupoJDefinido, GrupoKDefinido, GrupoLDefinido) :- sim(grupoA, GrupoADefinido),
+                            sim(grupoB, GrupoBDefinido),
+                            sim(grupoC, GrupoCDefinido),
+                            sim(grupoD, GrupoDDefinido),
+                            sim(grupoE, GrupoEDefinido),
+                            sim(grupoF, GrupoFDefinido),
+                            sim(grupoG, GrupoGDefinido),
+                            sim(grupoH, GrupoHDefinido),
+                            sim(grupoI, GrupoIDefinido),
+                            sim(grupoJ, GrupoJDefinido),
+                            sim(grupoK, GrupoKDefinido),
+                            sim(grupoL, GrupoLDefinido).
+
+
+% Borrar para usar simular_grupos
+dieciseisavos1(Grupo1, Grupo2, Ganador) :- lista_de(Grupo1, Lista1), 
+                            lista_de(Grupo2, Lista2), 
+                            random_permutation(Lista1, Grupo1Definido),
+                            random_permutation(Lista2, Grupo2Definido),
+                            segundo(Grupo1Definido, Segundo1),
+                            segundo(Grupo2Definido, Segundo2),
+                            elegir(Segundo1, Segundo2, Ganador).
