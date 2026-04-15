@@ -45,7 +45,6 @@ grupoI(senegal).
 grupoI(iraq).
 grupoI(noruega).
 
-
 grupoJ(argentina).
 grupoJ(argelia).
 grupoJ(austria).
@@ -99,10 +98,69 @@ simular_grupos(GrupoADefinido, GrupoBDefinido, GrupoCDefinido, GrupoDDefinido, G
 
 
 % Borrar para usar simular_grupos
-dieciseisavos1(Grupo1, Grupo2, Ganador) :- lista_de(Grupo1, Lista1), 
-                            lista_de(Grupo2, Lista2), 
-                            random_permutation(Lista1, Grupo1Definido),
-                            random_permutation(Lista2, Grupo2Definido),
-                            segundo(Grupo1Definido, Segundo1),
-                            segundo(Grupo2Definido, Segundo2),
-                            elegir(Segundo1, Segundo2, Ganador).
+dieciseisavos1(Ganador1, Ganador2, Ganador3, Ganador4, Ganador5, Ganador6, Ganador7, Ganador8, Ganador9, Ganador10, Ganador11 , Ganador12, Ganador13, Ganador14, Ganador15, Ganador16) :- 
+                            simular_grupos(GA, GB, GC, GD, GE, GF, GG, GH, GI, GJ, GK, GL),
+                            %primer cruce
+                            segundo(GA, SegundoA),
+                            segundo(GB, SegundoB),
+                            elegir(SegundoA, SegundoB, Ganador1),
+                            %segundo cruce
+                            primero(GE, PrimeroE),
+                            tercero(GC, Tercero1),% Elijo uno para hacerlo menos complejo
+                            elegir(PrimeroE, Tercero1, Ganador2),
+                            %tercer cruce
+                            primero(GF, PrimeroF),
+                            segundo(GC, SegundoC),
+                            elegir(PrimeroF, SegundoC, Ganador3),
+                            %cuarto cruce
+                            primero(GC, PrimeroC),
+                            segundo(GF, SegundoF),
+                            elegir(PrimeroC, SegundoF, Ganador4),
+                            %quinto cruce
+                            primero(GI, PrimeroI),
+                            tercero(GE, Tercero2),%%%%
+                            elegir(PrimeroI, Tercero2, Ganador5),
+                            %sexto cruce
+                            segundo(GE, SegundoE),
+                            segundo(GI, SegundoI),
+                            elegir(SegundoE, SegundoI, Ganador6),
+                            %septimo cruce
+                            primero(GA, PrimeroA),
+                            tercero(GD, Tercero3),%%%%%
+                            elegir(PrimeroA, Tercero3, Ganador7),
+                            %octavo cruce
+                            primeroL(GL, PrimeroL),
+                            tercero(GF, Tercero4),
+                            elegir(PrimeroL, Tercero4, Ganador8),%%%%% c,e,d,f
+                            %noveno cruce
+                            primero(GD, PrimeroD),
+                            tercero(GB, Tercero5),
+                            elegir(PrimeroD, TerceroB, Ganador9),
+                            %decimo cruce
+                            primero(GG, PrimeroG),
+                            tercero(GA, Tercero6), %%% c,e,d,f,b,a
+                            elegir(PrimeroG, Tercero5, Ganador10),
+                            %undecimo cruce
+                            segundo(GK, SegundoK),
+                            segundo(GL, SegundoL),
+                            elegir(SegundoK, SegundoL, Ganador11),
+                            %duodecimo cruce
+                            primero(GH, PrimeroH),
+                            segundo(GJ, SegundoJ),
+                            elegir(PrimeroH, SegundoJ, Ganador12),
+                            %decimotercer cruce
+                            primero(GJ, PrimeroJ),
+                            segundoH(GH, SegundoH),
+                            elegir(PrimeroJ, SegundoH, Ganador13),
+                            %decimocuarto cruce
+                            segundo(GD, SegundoD),
+                            segundo(GG, SegundoG),
+                            elegir(SegundoD, SegundoG, Ganador14),
+                            %decimoquinto cruce
+                            primero(GB, PrimeroB),
+                            tercero(GG, Tercero7),
+                            elegir(PrimeroB, Tercero7, Ganador15),
+                            %decimosexto cruce
+                            primero(GK, PrimeroK),
+                            tercero(GH, Tercero8),
+                            elegir(PrimeroK, Tercero8, Ganador16).
