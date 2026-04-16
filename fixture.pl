@@ -97,8 +97,8 @@ simular_grupos(GrupoADefinido, GrupoBDefinido, GrupoCDefinido, GrupoDDefinido, G
                             sim(grupoL, GrupoLDefinido).
 
 
-% Borrar para usar simular_grupos
-dieciseisavos1(Ganador1, Ganador2, Ganador3, Ganador4, Ganador5, Ganador6, Ganador7, Ganador8, Ganador9, Ganador10, Ganador11 , Ganador12, Ganador13, Ganador14, Ganador15, Ganador16) :- 
+% Simula cruces de 16avos
+dieciseisavos(Ganadores16Avos) :- 
                             simular_grupos(GA, GB, GC, GD, GE, GF, GG, GH, GI, GJ, GK, GL),
                             %primer cruce
                             segundo(GA, SegundoA),
@@ -129,17 +129,17 @@ dieciseisavos1(Ganador1, Ganador2, Ganador3, Ganador4, Ganador5, Ganador6, Ganad
                             tercero(GD, Tercero3),%%%%%
                             elegir(PrimeroA, Tercero3, Ganador7),
                             %octavo cruce
-                            primeroL(GL, PrimeroL),
+                            primero(GL, PrimeroL),
                             tercero(GF, Tercero4),
                             elegir(PrimeroL, Tercero4, Ganador8),%%%%% c,e,d,f
                             %noveno cruce
                             primero(GD, PrimeroD),
                             tercero(GB, Tercero5),
-                            elegir(PrimeroD, TerceroB, Ganador9),
+                            elegir(PrimeroD, Tercero5, Ganador9),
                             %decimo cruce
                             primero(GG, PrimeroG),
                             tercero(GA, Tercero6), %%% c,e,d,f,b,a
-                            elegir(PrimeroG, Tercero5, Ganador10),
+                            elegir(PrimeroG, Tercero6, Ganador10),
                             %undecimo cruce
                             segundo(GK, SegundoK),
                             segundo(GL, SegundoL),
@@ -150,7 +150,7 @@ dieciseisavos1(Ganador1, Ganador2, Ganador3, Ganador4, Ganador5, Ganador6, Ganad
                             elegir(PrimeroH, SegundoJ, Ganador12),
                             %decimotercer cruce
                             primero(GJ, PrimeroJ),
-                            segundoH(GH, SegundoH),
+                            segundo(GH, SegundoH),
                             elegir(PrimeroJ, SegundoH, Ganador13),
                             %decimocuarto cruce
                             segundo(GD, SegundoD),
@@ -163,4 +163,75 @@ dieciseisavos1(Ganador1, Ganador2, Ganador3, Ganador4, Ganador5, Ganador6, Ganad
                             %decimosexto cruce
                             primero(GK, PrimeroK),
                             tercero(GH, Tercero8),
-                            elegir(PrimeroK, Tercero8, Ganador16).
+                            elegir(PrimeroK, Tercero8, Ganador16),
+                            Ganadores16Avos = [
+                                Ganador1, Ganador2, Ganador3, Ganador4,
+                                Ganador5, Ganador6, Ganador7, Ganador8,
+                                Ganador9, Ganador10, Ganador11, Ganador12,
+                                Ganador13, Ganador14, Ganador15, Ganador16
+                            ].
+    
+% simula cruces de octavos
+% nth0 sirve para acceder a elementos de una lista facil
+octavos(Ganadores8vos) :- dieciseisavos(Ganadores16Avos),
+                            nth0(0, Ganadores16Avos, Clasificado1),
+                            nth0(1, Ganadores16Avos, Clasificado2),
+                            nth0(2, Ganadores16Avos, Clasificado3),
+                            nth0(3, Ganadores16Avos, Clasificado4),
+                            nth0(4, Ganadores16Avos, Clasificado5),
+                            nth0(5, Ganadores16Avos, Clasificado6),
+                            nth0(6, Ganadores16Avos, Clasificado7),
+                            nth0(7, Ganadores16Avos, Clasificado8),
+                            nth0(8, Ganadores16Avos, Clasificado9),
+                            nth0(9, Ganadores16Avos, Clasificado10),
+                            nth0(10, Ganadores16Avos, Clasificado11),
+                            nth0(11, Ganadores16Avos, Clasificado12),
+                            nth0(12, Ganadores16Avos, Clasificado13),
+                            nth0(13, Ganadores16Avos, Clasificado14),
+                            nth0(14, Ganadores16Avos, Clasificado15),
+                            nth0(15, Ganadores16Avos, Clasificado16),
+
+                            elegir(Clasificado1, Clasificado2, Ganador1),
+                            elegir(Clasificado3, Clasificado4, Ganador2),
+                            elegir(Clasificado5, Clasificado6, Ganador3),
+                            elegir(Clasificado7, Clasificado8, Ganador4),
+                            elegir(Clasificado9, Clasificado10, Ganador5),
+                            elegir(Clasificado11, Clasificado12, Ganador6),
+                            elegir(Clasificado13, Clasificado14, Ganador7),
+                            elegir(Clasificado15, Clasificado16, Ganador8),
+                            
+                            Ganadores8vos = [Ganador1, Ganador2, Ganador3, Ganador4, Ganador5, Ganador6, Ganador7, Ganador8].
+                       
+cuartos(GanadoresCuartos) :- octavos(Ganadores8vos),
+                             nth0(0, Ganadores8vos, Clasificado1),
+                             nth0(1, Ganadores8vos, Clasificado2), 
+                             nth0(2, Ganadores8vos, Clasificado3), 
+                             nth0(3, Ganadores8vos, Clasificado4),
+                             nth0(4, Ganadores8vos, Clasificado5), 
+                             nth0(5, Ganadores8vos, Clasificado6), 
+                             nth0(6, Ganadores8vos, Clasificado7), 
+                             nth0(7, Ganadores8vos, Clasificado8),
+
+                            elegir(Clasificado1, Clasificado2, Ganador1),
+                            elegir(Clasificado3, Clasificado4, Ganador2),
+                            elegir(Clasificado5, Clasificado6, Ganador3),
+                            elegir(Clasificado7, Clasificado8, Ganador4),
+
+                            GanadoresCuartos = [Ganador1, Ganador2, Ganador3, Ganador4].
+
+semis(GanadoresSemis) :- cuartos(GanadoresCuartos),
+                            nth0(0, GanadoresCuartos, Clasificado1),
+                            nth0(1, GanadoresCuartos, Clasificado2), 
+                            nth0(2, GanadoresCuartos, Clasificado3), 
+                            nth0(3, GanadoresCuartos, Clasificado4),
+
+                            elegir(Clasificado1, Clasificado2, Ganador1),
+                            elegir(Clasificado3, Clasificado4, Ganador2),
+
+                            GanadoresSemis = [Ganador1, Ganador2].
+
+final(Ganador) :- semis(GanadoresSemis),
+                            nth0(0, GanadoresSemis, Clasificado1),
+                            nth0(1, GanadoresSemis, Clasificado2),
+
+                            elegir(Clasificado1, Clasificado2, Ganador).
